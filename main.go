@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	viper.SetConfigName("app")
+	viper.SetConfigName("dev")
 	viper.SetConfigType("yaml")
 	viper.AddConfigPath("./config")
 	err := viper.ReadInConfig()
@@ -19,6 +19,7 @@ func main() {
 
 	r := gin.Default()
 	r.POST("/callback", api.CallBack)
+	r.POST("/message", api.PushMsg)
 	r.GET("/message", api.GetUserMsg)
 	r.Run(":5000")
 }
