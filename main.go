@@ -19,6 +19,6 @@ func main() {
 
 	r := gin.Default()
 	r.POST("/callback", api.CallBack)
-
+	r.GET("/message", api.GetUserMsg)
 	r.Run(":5000")
 }

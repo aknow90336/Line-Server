@@ -11,7 +11,6 @@ import (
 )
 
 func CallBack(c *gin.Context) {
-
 	ctx := c.Request.Context()
 
 	bot, err := linebot.New(
@@ -20,11 +19,11 @@ func CallBack(c *gin.Context) {
 	)
 
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	events, err := bot.ParseRequest(c.Request)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -33,9 +32,8 @@ func CallBack(c *gin.Context) {
 				repo := messageImpl.NewMessageRepo(ctx, env.InitMongo(ctx))
 				err := repo.AddMessage(event.Source.UserID, message.Text)
 				if err != nil {
-					log.Fatal(err)
+					log.Println(err)
 				}
-
 			}
 		}
 	}
