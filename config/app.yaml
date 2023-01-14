@@ -1,0 +1,7 @@
+line:
+  as:
+  token: "PjL6GzsfpAeHEhBa+cFNpBNUrHvBTnivTcNkc+wH8pd5JJxAfouS/EvpLqTbSQzL1zCQZwRw0qk/XOoLwloALE6TMi2PmOmrPF4z1iO7vLM/sNGNTv84L7TBDJ33agMOvacBtF/IjyE0ZFjZcOHVDgdB04t89/1O/w1cDnyilFU="
+  secret: "b71b269b698063d70097ae884d5bb268"
+mongodb:
+  uri: "mongodb://localhost:27017"
+  default-db: "line-official-account"
